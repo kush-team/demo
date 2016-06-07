@@ -1,52 +1,20 @@
-<div class="windows-menu">
-	<div class="app-title">Oblat Editor</div>
-	<div class="controls">
-		<div class="minimize" {{action 'minimize'}}>
-			{{fa-icon 'minus'}}
-		</div>
-		{{#if isMaximize}}
-			<div class="maximize" {{action 'unmaximize'}}>
-				{{fa-icon 'minus-square-o'}}
-			</div>
-			{{else}}
-			<div class="maximize" {{action 'maximize'}}>
-				{{fa-icon 'square-o'}}
-			</div>
-		{{/if}}
-		<div class="close" {{action 'close'}}>
-			{{fa-icon 'close'}}
-		</div>
-	</div>
-</div>
-
-{{#if session.isAuthenticated}}
-
 	<div {{bind-attr class=":sidebar isShowMenu:show"}}>
 
 
 		<div class="user">
 			{{#link-to 'index'}}
-				<img class="ui tiny image" src="http://oblat.am/assets/images/observatorio-logo.svg">	
+				MGJ
 			{{/link-to}}
 			<h3 class="ui sub header">{{session.user.name}} {{session.user.lastName}}</h3>
 			<i>{{session.user.email}}</i>
-			{{link-to "Crear informe" "reports.new" classNames="positive ui fluid button"}}
 		</div>
 
 		<div class="ui inverted vertical menu">
 			
-			{{#link-to 'reports.index' class="item"}}
+			{{#link-to 'index' class="item"}}
 				{{fa-icon 'list' class="icon"}}
 				Todos los informes
 			{{/link-to}}
-			{{#link-to 'unpublish' class="item"}}
-				{{fa-icon 'floppy-o' class="icon"}}
-				Sin publicar
-			{{/link-to}}
-			<a {{ action 'invalidateSession' }} class="item">
-				{{fa-icon "sign-out" class="icon"}}
-				Cerrar sesión
-			</a>	
 		</div>
 		
 	</div>
@@ -65,14 +33,4 @@
 		{{outlet}}
 
 	</div>
-
-{{else}}
-
-	<div class="login">
-
-		{{outlet}}
-
-	</div>
-
-{{/if}}
 
