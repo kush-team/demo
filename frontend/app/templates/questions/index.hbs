@@ -26,9 +26,15 @@
           
         </div>
         <div class="extra">
-          {{#link-to "questions.show" model.report.id question.id classNames="ui blue label"}}
-  	        Ver pregunta completa
-  	      {{/link-to}}
+          {{#if session.user.isLegislador}}
+            {{#link-to "questions.show" model.report.id question.id classNames="ui blue label"}}
+    	        Ver pregunta completa
+    	      {{/link-to}}
+          {{else}}
+            {{#link-to "answers" model.report.id question.id classNames="ui blue label"}}
+              Ver pregunta completa
+            {{/link-to}}   
+          {{/if}}
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 	  	return this.get('session.user').then(function (user) {
 	  		return user.get('roles').then(function (roles) {
 	  			if (user.get('isLegislador')) {
-					return _this.store.find("report", {camera: this.get('session.user').get('camera').get('id')});
+					return _this.store.find("report", {camera: _this.get('session.user').get('camera').get('id')});
 	  			} else {
 	  				return _this.store.find("report");
 	  			}
