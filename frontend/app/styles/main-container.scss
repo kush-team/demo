@@ -20,6 +20,6 @@
 
 .header.-flex {
   @include display(flex);
- @include align-items(flex-end);
+  @include align-items(flex-end);
   @include justify-content(space-between);
 }

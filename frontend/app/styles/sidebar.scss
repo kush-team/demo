@@ -27,8 +27,9 @@
 
     
     .menu-search.input {
-        padding: 15px;
-    background: #A7CBD9;
+      padding: 15px;
+      background: #A7CBD9;
+      
       input {
         color: #fff;
       }
@@ -55,23 +56,30 @@
       text-align: left;
       background: #2b2b47;
       padding: 15px;
+      position: relative;
 
       .logo {
         color: #fff;
         font-size: 20px;
         font-weight: 600;
-            width: 100%;
-    float: left;
+        width: 100%;
+        float: left;
 
         .fa {
           padding-right: 15px;
         }
       }
 
-
+      .settings {
+        position: absolute;
+        font-size: 22px;
+        top: 13px;
+        right: 13px;
+        color: #fff;
+      }
 
       .sub {
-    margin-top: 17px;
+        margin: 17px 0 0 0;
       }
 
       .image {

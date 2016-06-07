@@ -1,52 +1,33 @@
 {{#if session.isAuthenticated}}
 	
 	<div {{bind-attr class=":sidebar isShowMenu:show"}}>
-
-
 		<div class="user">
 			{{#link-to 'index' class="logo"}}
-				{{fa-icon 'weixin'}}MGJ
+				{{fa-icon 'weixin'}} {{session.user.name}}
 			{{/link-to}} <br>
-			<p class="sub">{{session.user.email}}</p>
-		</div>
-
-{{#perfect-scroll wheelSpeed=2}}
-    
-
-		<div class="ui inverted vertical menu">
-
-
-{{#each report in model}}
-
-		{{#link-to 'questions' report.id class="item"}}
-		{{fa-icon 'file-o' class="icon"}}Informe N°{{report.title}}
+			<p class="sub"><b>{{session.user.email}}</b></p>
+			{{#link-to 'admin.index' class="settings"}}
+				{{fa-icon "cog" class="icon"}}
 			{{/link-to}}
-
-
-{{/each}}
-
-
-
-
-		 {{#link-to 'admin.index' class="item"}}
-	{{fa-icon "cog" class="icon"}}
-	Ajustes
-{{/link-to}}
-
-		 {{#link-to 'reports.index' class="item"}}
-	{{fa-icon "file" class="icon"}}
-	Listado de Informes
-{{/link-to}}
-
-
-		<a {{ action 'invalidateSession' }} class="item bottom blue active">
- 	{{fa-icon "sign-out" class="icon"}}
- 				Cerrar sesión
- 			</a>
-
 		</div>
-		
-{{/perfect-scroll}}
+
+		{{#perfect-scroll wheelSpeed=2}}
+		<div class="ui inverted vertical menu">
+			{{#link-to 'reports.index' class="item"}}
+				{{fa-icon "file" class="icon"}}
+				Listado de Informes
+			{{/link-to}}
+			{{#each report in model}}
+				{{#link-to 'questions' report.id class="item"}}
+					{{fa-icon 'file-o' class="icon"}}Informe N°{{report.title}}
+				{{/link-to}}
+			{{/each}}
+			<a {{ action 'invalidateSession' }} class="item bottom blue active">
+					{{fa-icon "sign-out" class="icon"}}
+				Cerrar sesión
+				</a>
+		</div>
+		{{/perfect-scroll}}
 	</div>
 
 	<div class="main-menu">
@@ -56,25 +37,12 @@
 			</div>
 		</div>
 	</div>
-
-
 	<div class="main-container">
-
 		{{outlet}}
-
-
-
 	</div>
-
 {{else}}
-
 	<div class="login">
-
 		{{outlet}}
-
-
-
 	</div>
-
 {{/if}}
 

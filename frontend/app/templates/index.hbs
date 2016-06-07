@@ -1,45 +1,13 @@
-
-<section class="reports">
-  <h1 class="ui dividing header">
-    Informe N°92
-   <div class="sub header">Camara de Senad</div>
-  </h1>
-
-  <div class="filter-menu">
-    <div class="ui transparent left icon input">
-      <input type="text" placeholder="Filtrar por...">
-      <i class="search icon"></i>
-    </div>
-
-    <div class="actions">
-      <button class="ui green button tiny">Presentada </button>
-      
-    </div>
-  </div>
-
-
 <div class="section-content home ui segment tall stacked">
-  <div class="ui divided items -accordion">
-    <div class="item">
-      <div class="content">
-        <a class="header">Deuda con San Luís</a>
-        <div class="meta">
-          <span class="cinema">12 de octubre</span>
-        </div>
-        <div class="description">
-          <p>Atom inspired notification messages for ember-cli, forked from stonecircle/ember-cli-notifications</p>
-        </div>
-        <div class="extra">
-          <div class="ui blue label large">Ver más</div>
-        </div>
-        <div class="actions" style="padding-top: 15px;">
-          <a class="ui green label medium">{{fa-icon 'send' class="icon"}} Enviada</a>
-          <div class="ui label medium">{{fa-icon 'bank' class="icon"}} Ministerio de Ciencia y tecnologia</div>
-          <div class="ui label medium">{{fa-icon 'bookmark' class="icon"}} Avanzar San Luis</div>
-        </div>
-    </div>
+<h2 class="ui icon header" style="width: 100%; padding: 1em; opacity: 0.7;">
+  <i class="rocket icon"></i>
+  <div class="content" style="line-height: 30px;">
+    Bienvenido {{session.user.name}} <br> al Gestor de consultas
+    <div class="sub header" style="margin: 15px 0;">Acceda a un listado de los informes</div>
+    {{#link-to 'reports.index' class="ui button blue"}}
+      Comenzar
+    {{/link-to}}
   </div>
+</h2>
 </div>
-</div>
-</section>
 
