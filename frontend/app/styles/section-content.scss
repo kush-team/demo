@@ -36,12 +36,57 @@
 .filter-menu {
     background: #C2CFD8;
     padding: 10px;
-    display: flex;
+    @include display(flex);
     justify-content: space-between;
+
+    .left {
+       @include flex(1);
+    border-bottom: 1px solid #999;
+        margin-right: 15px;
+    }
 }
 
 .reports {
   .header {
     margin-bottom: 0 !important;
   }
+}
+
+.-accordion {
+  .accordion {
+    width: 100%;
+  }
+
+  .description {
+    padding: 5px 0 10px 24px;
+
+        @include media($mobile) {
+padding: 5px 0 10px 0;
+    }
+  }
+
+  .actions {
+    .label {
+              @include media($mobile) {
+margin: 0 0 5px 0;
+    }
+    }
+  }
+
+  .answer {
+    font-size: 15px;
+  }
+
+  .header {
+        font-size: 19px;
+    font-weight: 600;
+  }
+}
+
+.-flex {
+   @include display(flex);
+
+   .two {
+    @include flex(1);
+   }
 }

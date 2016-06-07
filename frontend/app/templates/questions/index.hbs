@@ -1,17 +1,39 @@
 <section>
-
-  <h2 class="ui dividing header">
-    Todos los informes
-    {{link-to "Crear informe" "questions.new" model.report.id classNames="positive ui fluid button"}}
+  <h2 class="ui dividing header -flex">
+   Informe N° {{model.report.title}}
+   <div class="sub header">Camara de {{model.report.camera.name}}</div>
+    <div class="actions">{{link-to "Crear pregunta" "questions.new" model.report.id classNames="positive ui tiny fluid button"}}</div>
   </h2>
 
 
+  <div class="section-content home ui segment tall stacked">
+  <div class="ui divided items ">
   {{#each question in model.questions}}
-      {{#link-to "questions.show" model.report.id question.id classNames="positive ui fluid button"}}
-        {{question.title}}
-      {{/link-to}}
+  	<div class="item">
+    <div class="content">
+      <h4 class="header">{{question.title}}</h4>
+      <div class="meta">
+      	<a href="">{{question.author.fullName}}</a>
+      </div>
+      <div class="description">
+        <p>{{question.text}}</p>
+      </div>
+      <div class="actions">
+      	<div class="ui label">{{question.author.brick.name}}</div>
+      </div>
+      <div class="extra">
+        {{#link-to "questions.show" model.report.id question.id classNames="ui blue label"}}
+	        Ver pregunta completa
+	      {{/link-to}}
+      </div>
+    </div>
+  </div>
   {{/each}}
+  </div>
+  </div>
 
 </section>
 
 {{outlet}}
+
+

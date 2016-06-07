@@ -8,6 +8,10 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 		controller.set('isMaximize', false);
 	},
 
+	model: function() {
+	    return this.store.find("report");
+	},
+
 	actions: {
  		willTransition: function(transition) { 
    		 	this.controller.set('isShowMenu', false);

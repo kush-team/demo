@@ -1,1 +1,69 @@
+
+
+  <h2 class="ui dividing header -flex">
+   Informe N° {{model.title}}
+    <div class="actions">{{link-to "Crear pregunta" "reports.new" classNames="ui orange button tiny" }}</div>
+  </h2>
+
+    <div class="filter-menu">
+  <div class="ui very relaxed horizontal list">
+  <div class="item">
+  	<div class="ui label">
+  <i class="add icon"></i> Agregar filtro
+</div>
+  </div>
+  <div class="item">
+  	<div class="ui blue label">
+  Senado
+  <div class="detail">214</div>
+</div>
+  </div>
+  <div class="item">
+  	<div class="ui green label">
+  Publicados
+  <div class="detail">122</div>
+</div>
+  </div>
+	</div>
+  </div>
+
+  <div class="section-content home ui segment tall stacked">
+  <div class="ui divided items -accordion">
+
+ 
+<div class="item">
+	{{#ui-accordion}}
+
+	  <div class="title" style="position: relative;">
+	  	 <i class="dropdown icon"></i>
+	    <a class="header">Deuda con San Luís <span class="cinema">12 de octubre</span></a>
+        <div class="description">
+          <p>Atom inspired notification messages for ember-cli, forked from stonecircle/ember-cli-notifications</p>
+        </div>
+        <div class="extra">
+          <div class="ui blue label large">Ver completo</div>
+        </div>
+        
+	  </div>
+	  <div class="content answer">
+	  	<h4 class="ui header dividing">Respuesta</h4>
+	  	<p>
+	  		
+	    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+	  	</p>
+	  </div>
+	  <div class="actions" style="padding-top: 5px;">
+          <a class="ui green label medium">{{fa-icon 'send' class="icon"}} Enviada</a>
+          <a class="ui label medium">{{fa-icon 'bank' class="icon"}} Ministerio de Ciencia y tecnologia</a>
+          <a class="ui label medium">{{fa-icon 'bookmark' class="icon"}} Avanzar San Luis</a>
+        </div>
+	{{/ui-accordion}}
+</div> 
+
+
+   
+
+</div>
+</div>
+
 {{outlet}}

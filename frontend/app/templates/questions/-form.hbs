@@ -9,8 +9,9 @@
       <label>Titulo</label>
       {{input type="text" value=model.title}}
     </div>
+
     <div class="field">
-      <label>Pregunta</label>
-      {{input type="text" value=model.text}}
-    </div>    
+      <label for="">Pregunta</label>
+      {{froala-editor contentBindingEvent=model.text}}
+    </div> 
 </form>

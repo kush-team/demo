@@ -1,7 +1,7 @@
 .sidebar {
     position: fixed;
     background: #2D4059;
-    width: 240px;
+    width: 300px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -10,14 +10,19 @@
     @include transition(all .8s cubic-bezier(0.7,0,.3,1));
 
     @include media($mobile) {
-      left: -240px;
-      padding-top: 50px;
+      left: -600px;
+      padding-top: 43px;
       z-index: 2003;
+      width: 100%;
     }
 
     .vertical.menu {
-      width: 240px;
+      width: 300px;
       margin: 0;
+
+      @include media($mobile) {
+        width: 100%;
+      }
     }
 
     
@@ -32,12 +37,12 @@
 
 
     .ps-container {
-      height: calc(100vh - 60px);
+      height: calc(100vh - 140px);
       position: relative;
       padding: 0;
 
         @include media($mobile) {
-           height: calc(100vh - 110px)
+           height: calc(100vh - 168px)
       }
     }
 
@@ -55,16 +60,18 @@
         color: #fff;
         font-size: 20px;
         font-weight: 600;
+            width: 100%;
+    float: left;
 
         .fa {
           padding-right: 15px;
         }
       }
 
+
+
       .sub {
-        color: #fff;
-        margin: 0;
-        font-size: 1em;
+    margin-top: 17px;
       }
 
       .image {
@@ -83,6 +90,29 @@
       .icon {
         float: left !important;
         margin: 0em 0.5em 0em 0em !important;
+      }
+
+      .item {
+        font-size: 16px;
+        padding: 16px 13px;
+
+        .item {
+          padding: 15px 6px;
+          .item {
+            padding: 15px;
+          }
+        }
+
+      }
+
+      .bottom {
+        position: fixed;
+        bottom: 0;
+        width: 300px;
+
+          @include media($mobile) {
+           width: 100%;
+          }
       }
     }
 }

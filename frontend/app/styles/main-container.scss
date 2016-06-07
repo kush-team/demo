@@ -1,19 +1,25 @@
 .main-container {
-    margin-left: 240px;
+    margin-left: 300px;
     float: left;
     background: #f9f9f9;
-    width: calc(100% - 240px);
+    width: calc(100% - 300px);
     min-height: 100vh;
     padding: 3em;
 
     @include media($mobile) {
       margin-left: 0;
       width: 100%;
-      padding: 5em 2em;
+      padding: 5em 1em;
     }
 
     section {
       max-width: 1020px;
       margin: 0 auto;
     }
+}
+
+.header.-flex {
+  @include display(flex);
+ @include align-items(flex-end);
+  @include justify-content(space-between);
 }

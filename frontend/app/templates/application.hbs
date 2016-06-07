@@ -6,77 +6,40 @@
 		<div class="user">
 			{{#link-to 'index' class="logo"}}
 				{{fa-icon 'weixin'}}MGJ
-			{{/link-to}}
-			<h3 class="ui sub header">{{session.user.name}} {{session.user.lastName}}</h3>
-			<i>{{session.user.email}}</i>
+			{{/link-to}} <br>
+			<p class="sub">{{session.user.email}}</p>
 		</div>
 
 {{#perfect-scroll wheelSpeed=2}}
     
 
 		<div class="ui inverted vertical menu">
-			
-		  <div class="item" style="padding: 0;">
-		    <div class="ui transparent input menu-search">
-		    	<input type="text" placeholder="Buscar...">
-		    	
-		    </div>
-		  </div>
 
 
-{{#ui-accordion class="item inverted"}}
-	<div class="title">
-		{{fa-icon 'file-o' class="icon"}}Informe Numero 92
-	</div>
-	<div class="content">
-		<div class="item">
-			BLOQUE AVANZAR SAN LUIS
-			<div class="menu">
-				<a class="active item">Jon Snow</a>
-				<a class="item">Arya Stark</a>
-				<a class="item">Valar Moguls</a>
-			</div>
-		</div>
-	</div>
-{{/ui-accordion}}
-{{#ui-accordion class="item inverted"}}
-	<div class="title">
-		{{fa-icon 'file-o' class="icon"}}Informe Numero 91
-	</div>
-	<div class="content">
-		<div class="item">
-			BLOQUE AVANZAR SAN LUIS
-			<div class="menu">
-				<a class="active item">Jon Snow</a>
-				<a class="item">Arya Stark</a>
-				<a class="item">Valar Moguls</a>
-			</div>
-		</div>
-	</div>
-{{/ui-accordion}}
-{{#ui-accordion class="item inverted"}}
-	<div class="title">
-		{{fa-icon 'file-o' class="icon"}}Informe Numero 90
-	</div>
-	<div class="content">
-		<div class="item">
-			BLOQUE AVANZAR SAN LUIS
-			<div class="menu">
-				<a class="active item">Jon Snow</a>
-				<a class="item">Arya Stark</a>
-				<a class="item">Valar Moguls</a>
-			</div>
-		</div>
-	</div>
-{{/ui-accordion}}
+{{#each report in model}}
+
+		{{#link-to 'questions' report.id class="item"}}
+		{{fa-icon 'file-o' class="icon"}}Informe N°{{report.title}}
+			{{/link-to}}
+
+
+{{/each}}
+
+
+
 
 		 {{#link-to 'admin.index' class="item"}}
 	{{fa-icon "cog" class="icon"}}
 	Ajustes
 {{/link-to}}
 
+		 {{#link-to 'reports.index' class="item"}}
+	{{fa-icon "file" class="icon"}}
+	Listado de Informes
+{{/link-to}}
 
-		<a {{ action 'invalidateSession' }} class="item">
+
+		<a {{ action 'invalidateSession' }} class="item bottom blue active">
  	{{fa-icon "sign-out" class="icon"}}
  				Cerrar sesión
  			</a>

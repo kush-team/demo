@@ -1,31 +1,32 @@
 <section>
 
-  <h2 class="ui dividing header">
+  <h2 class="ui dividing header -flex">
     Todos los informes
-    {{link-to "Crear informe" "reports.new" classNames="positive ui fluid button"}}
+    <div class="actions">{{link-to "Crear Informe" "reports.new" classNames="ui orange button tiny" }}</div>
   </h2>
 
   <div class="section-content home ui segment tall stacked">
-  <div class="ui divided link items ">
+  <div class="ui divided items ">
   {{#each report in model}}
       <div class="item">
-        <div class="image">
-          <img src="{{report.picture.url}}">
-        </div>
         <div class="content">
-           {{#link-to "reports.edit" report classNames="header"}}
-            Informe N°{{report.title}} | {{report.camera.name}}
-          {{/link-to}}
+           <div class="header">
+             
+
+            Informe N°{{report.title}}
+           </div>
           <div class="meta">
-            {{#if report.published}}
-              <div class="ui blue label tiny ">Publicado</div>
-            {{else}}
-              <div class="ui grey label tiny ">Sin publicar</div>
-            {{/if}}
+            
              <span> {{fa-icon 'clock-o' class="icon"}} <i>{{time-ago-in-words report.startDate}}</i></span>
           </div>
-          <div class="description">
-            <p>{{report.excerpt}}</p>
+          <div class="actions">
+             {{#if report.published}}
+              <div class="ui blue label medium ">Publicado</div>
+            {{else}}
+              <div class="ui label medium ">Sin publicar</div>
+            {{/if}}
+            <div class="ui label medium ">Cámara de {{report.camera.name}}</div>
+            
           </div>
           <div class="extra">
             {{#link-to "reports.edit" report.id classNames="ui icon button circular inverted small green" title="Editar"}}
