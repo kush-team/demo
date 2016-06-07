@@ -3,12 +3,7 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 import SaveModelMixin from '../../mixins/roles/save-model-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, SaveModelMixin, {
-  modelPath: 'report',
-  
   model: function() {
-    return Ember.RSVP.hash({
-        cameras: this.store.find('camera'),
-        report: this.store.createRecord('report')
-    })    
+    return this.store.createRecord('report');    
   },		
 });

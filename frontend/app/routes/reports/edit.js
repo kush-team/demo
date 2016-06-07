@@ -4,12 +4,8 @@ import SaveModelMixin from '../../mixins/roles/save-model-mixin';
 
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, SaveModelMixin, {
-	 modelPath: 'report',
 
 	model: function(params) {
-	    return Ember.RSVP.hash({
-	        cameras: this.store.find('camera'),
-	        report: this.store.find('report', params.report_id)
-	    })    
-  },
+	    return  this.store.find('report', params.report_id);  
+ 	 },
 });

@@ -1,16 +1,16 @@
 <form class="ui large form" {{action "save" on="submit"}}>
     <div class="field -action">
-        {{ui-checkbox name="isEnabled" checked=model.report.published class="toggle" label="Publicar"}}
+        {{ui-checkbox name="isEnabled" checked=model.published class="toggle" label="Publicar"}}
     </div> 
 
     <input type="submit" class="ui button blue -action" value="Guardar">
 
     <div class="field">
       <label>Titulo</label>
-      {{input type="text" value=model.report.title}}
+      {{input type="text" value=model.title}}
     </div>
      <div class="field">
       <label>Camara</label>
-      {{model-selector modelName='camera' value=model.report.camera optionLabelPath="content.name" }}
-    </div>
+      {{model-selector modelName='camera' value=model.camera optionLabelPath="content.name" }}
+    </div> 
 </form>
