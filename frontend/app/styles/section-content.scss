@@ -1,5 +1,5 @@
 .section-content {
-  margin-top: 25px;
+  margin-top: 0 !important;
 
   @include media($mobile) {
     margin-top: 0;
@@ -30,4 +30,18 @@
 
 .section-content .fr-view {
   min-height: 200px;
+}
+
+
+.filter-menu {
+    background: #C2CFD8;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reports {
+  .header {
+    margin-bottom: 0 !important;
+  }
 }

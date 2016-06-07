@@ -4,7 +4,7 @@
     background: #f9f9f9;
     width: calc(100% - 240px);
     min-height: 100vh;
-    padding: 4em;
+    padding: 3em;
 
     @include media($mobile) {
       margin-left: 0;
@@ -13,7 +13,7 @@
     }
 
     section {
-      max-width: 950px;
+      max-width: 1020px;
       margin: 0 auto;
     }
 }

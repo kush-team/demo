@@ -1,10 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
+  modelPath: '',
+
   actions: {
     save: function() {
       var route = this;
-      this.currentModel.save().then(function() {
+      var model = this.currentModel;
+      
+      if (this.get('modelPath')) {
+        model = model[this.get('modelPath')]
+      }
+
+      model.save().then(function() {
         var rs = route.routeName.split('.');
         var returnRoute = '';
         for (var i = 0; i < (rs.length - 1); i++) {
@@ -18,8 +26,14 @@ export default Ember.Mixin.create({
     }
   },  
   deactivate: function() {
-    if (this.currentModel) {
-      this.currentModel.rollback();
+    var model = this.currentModel;
+    
+    if (this.get('modelPath')) {
+      model = model[this.get('modelPath')]
+    }    
+
+    if (model) {
+      model.rollback();
     }
   }
 });

@@ -1,12 +1,9 @@
-<section>
-	<div class="section-header">
-		<h1>Nuevo rol</h1>
-		  {{link-to "Ver roles" "admin.bricks.index"  classNames="btn"}}
-	</div>
-
-	<div class="section-content">
-		{{partial "admin/bricks/form"}}
-	</div>
-</section>
-
-
+<h2 class="ui header dividing">
+  <div class="content">
+    Nuevo bloque
+    <div class="actions">{{link-to "Ver bloques" "admin.bricks.index"  classNames="ui basic button tiny"}}</div>
+  </div>
+</h2>
+<div>
+	{{partial "admin/bricks/form"}}
+</div>

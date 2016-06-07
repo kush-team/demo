@@ -1,0 +1,44 @@
+<section>
+
+  <h2 class="ui dividing header">
+    Todos los informes
+    {{link-to "Crear informe" "reports.new" classNames="positive ui fluid button"}}
+  </h2>
+
+  <div class="section-content home ui segment tall stacked">
+  <div class="ui divided link items ">
+  {{#each report in model}}
+      <div class="item">
+        <div class="image">
+          <img src="{{report.picture.url}}">
+        </div>
+        <div class="content">
+           {{#link-to "reports.edit" report classNames="header"}}
+            Informe N°{{report.title}} | {{report.camera.name}}
+          {{/link-to}}
+          <div class="meta">
+            {{#if report.published}}
+              <div class="ui blue label tiny ">Publicado</div>
+            {{else}}
+              <div class="ui grey label tiny ">Sin publicar</div>
+            {{/if}}
+             <span> {{fa-icon 'clock-o' class="icon"}} <i>{{time-ago-in-words report.startDate}}</i></span>
+          </div>
+          <div class="description">
+            <p>{{report.excerpt}}</p>
+          </div>
+          <div class="extra">
+            {{#link-to "reports.edit" report.id classNames="ui icon button circular inverted small green" title="Editar"}}
+               <i class="write icon"></i>
+            {{/link-to}}
+            <div class="ui icon button circular inverted small red" title="Eliminar" {{action "remove" report}}>
+              <i class="trash icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+       {{/each}}
+      </div>
+      </div>
+
+</section>

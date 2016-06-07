@@ -1,21 +1,56 @@
-hola que tal
+<h2 class="ui header dividing">
+  <i class="settings icon"></i>
+  <div class="content">
+    Account Settings
+    <div class="sub header">Manage your preferences</div>
+  </div>
+</h2>
 
-{{#link-to 'admin.bricks.index'}}
-	Bloques
-{{/link-to}}
-
-{{#link-to 'admin.ministries.index'}}
+  <div class="section-content home ui segment tall stacked">
+<div class="ui relaxed divided items">
+  <div class="item">
+    <div class="middle aligned content">
+      {{#link-to 'admin.bricks.index' class="header"}}
+		Bloques
+	  {{/link-to}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="middle aligned divide content">
+{{#link-to 'admin.ministries.index' class="header"}}
 	Ministerios
 {{/link-to}}
 
-{{#link-to 'admin.roles.index'}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="middle aligned content">
+{{#link-to 'admin.roles.index' class="header"}}
 	Roles
 {{/link-to}}
-
-{{#link-to 'admin.status-types.index'}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="middle aligned content">
+{{#link-to 'admin.status-types.index' class="header"}}
 	Estados
 {{/link-to}}
-
-{{#link-to 'admin.users.index'}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="middle aligned content">
+{{#link-to 'admin.users.index' class="header"}}
 	Usuarios
 {{/link-to}}
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
