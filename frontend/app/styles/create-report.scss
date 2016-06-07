@@ -1,0 +1,61 @@
+.create-report {
+	background: #fff;
+
+	.menu-header {
+		position: fixed;
+		top: 0;
+		left: 240px;
+		right: 0;
+		background: #fff;
+		padding: 15px 17px;
+		z-index: 2001;
+		margin: 0;
+		height: 60px;
+
+		@include media($mobile) {
+			left: 53px;
+			font-size: 15px !important;
+			height: 46px;
+			top: -2px;
+		    z-index: 3001;
+		}
+	}
+
+	.-action {
+		position: fixed;
+		top: 10px;
+		right: 10px;
+		z-index: 2001;
+
+		@include media($tablet) {
+			position: relative;
+			margin-bottom: 15px;
+			width: 49%;
+			float: right;
+			text-align: center;
+			top: 0;
+			right: 0;
+			left: 0;
+		}
+
+		.button {
+			
+		}
+
+		&.field {
+			right: 150px;
+			top: 16px;
+
+			@include media($tablet) {
+				right: 0;
+				top: 7px;
+			}
+		}
+	}
+
+	.section-content {
+		padding: 25px 15px;
+	}
+
+	
+}

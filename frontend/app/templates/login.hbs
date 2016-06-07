@@ -1,0 +1,41 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui blue image header">
+      <img src="http://oblat.am/assets/images/observatorio-logo.svg" class="image">
+      <div class="content">
+        Ingrese con su cuenta
+      </div>
+    </h2>
+
+  <form class="ui large form" {{action 'authenticate' on='submit'}}>
+    <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+             {{input id='identification' placeholder='E-mail' class='form-control' type='email' value=identification title='El mail no es válido' required=""}}
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            {{input id='password' placeholder='Contraseña' class='form-control' type='password' value=password required=""}}
+          </div>
+        </div>
+         <button type="submit" class="ui fluid large blue submit button">
+          {{#if loading}}
+            {{loading-spin color='#999' size=11}}
+          {{/if}} Ingresar
+        </button>
+      </div>
+
+      <div {{bind-attr class=":ui :error :message errorMessage:is-visible"}}>
+        <p>{{errorMessage}}</p>
+      </div>
+
+    </form>
+
+    <div class="ui message">
+      No tenes usuario? <a href="#">Registrate</a>
+    </div>
+  </div>
+</div>

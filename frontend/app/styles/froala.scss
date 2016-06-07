@@ -1,0 +1,27 @@
+.fr-box {
+    @include transition(all 1.8s cubic-bezier(0.7,0,.3,1));
+}
+
+.fr-box.fr-fullscreen {
+    left: 241px;
+
+    .fr-wrapper {
+	    padding: 4em 5em;
+
+	    .fr-placeholder {
+		    top: -5px;
+		    left: 10px;
+	        padding: 5em;
+		}
+
+		@include media($desktop) {
+		  padding: 5em 12em;
+		}
+	}
+
+	
+}
+
+.fr-sticky-on {
+	top: 70px !important;
+}

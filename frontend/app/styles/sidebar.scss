@@ -1,0 +1,51 @@
+.sidebar {
+    position: fixed;
+    background: #2D4059;
+    width: 240px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 15px;
+    color: #fff;
+    @include transition(all .8s cubic-bezier(0.7,0,.3,1));
+    padding-top: 30px;
+
+    @include media($mobile) {
+      left: -240px;
+      padding-top: 50px;
+      z-index: 2003;
+    }
+
+    &.show {
+      left: 0;
+      
+    }
+
+    .user {
+      text-align: center;
+
+      .sub {
+        color: #fff;
+        margin: 0;
+        font-size: 1em;
+      }
+
+      .image {
+        margin: 15px auto;
+
+      }
+
+      .button {
+        margin-top: 15px;
+      }
+    }
+
+    .vertical.menu {      
+      background: transparent;
+      
+      .icon {
+        float: left !important;
+        margin: 0em 0.5em 0em 0em !important;
+      }
+    }
+}

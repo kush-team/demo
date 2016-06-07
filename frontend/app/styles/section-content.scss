@@ -1,0 +1,33 @@
+.section-content {
+  margin-top: 25px;
+
+  @include media($mobile) {
+    margin-top: 0;
+  }
+
+  .image {
+    @include media($mobile) {
+      display: none !important;
+    }
+  }
+
+  .header {
+    line-height: 23px;
+  }
+
+  .description {
+     display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+
+    p {
+       width: 100%;
+      overflow: hidden;
+      font-size: 16px;
+    }
+  }
+}
+
+.section-content .fr-view {
+  min-height: 200px;
+}

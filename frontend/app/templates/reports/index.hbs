@@ -1,0 +1,42 @@
+<section>
+
+  <h2 class="ui dividing header">
+    Todos los informes
+  </h2>
+
+  <div class="section-content reports ui segment tall stacked">
+        <div class="ui divided very link relaxed items">
+       {{#each report in model}}
+      <div class="item">
+        <div class="image">
+          <img src="{{report.picture.url}}">
+        </div>
+        <div class="content">
+           {{#link-to "reports.edit" report classNames="header"}}
+            {{report.title}}
+          {{/link-to}}
+          <div class="meta">
+            {{#if report.published}}
+              <div class="ui blue label tiny ">Publicado</div>
+            {{else}}
+              <div class="ui grey label tiny ">Sin publicar</div>
+            {{/if}}
+             <span> {{fa-icon 'clock-o' class="icon"}} <i>{{time-ago-in-words report.createdAt}}</i></span>
+          </div>
+          <div class="description">
+            <p>{{report.excerpt}}</p>
+          </div>
+          <div class="extra">
+            {{#link-to "reports.edit" report classNames="ui icon button circular inverted small green" title="Editar"}}
+               <i class="write icon"></i>
+            {{/link-to}}
+            <div class="ui icon button circular inverted small red" title="Eliminar" {{action "remove" report}}>
+              <i class="trash icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+       {{/each}}
+    </div>
+  </div>
+</section>

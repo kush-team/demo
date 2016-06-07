@@ -1,0 +1,60 @@
+button {
+  -webkit-app-region: no-drag;
+}
+
+.windows-menu {
+    -webkit-app-region: drag;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    background: #333;
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
+    color: #fff;
+    padding: 0;
+    @include transition(all 0.4s cubic-bezier(0.7,0,.3,1));
+
+    @include media($mobile) {
+          top: 0;
+    background: none;
+    left: 52px;
+    height: 42px;
+      
+    }
+}
+
+.controls {
+	display: flex;
+	padding: 5px 15px;
+	width: 100px;
+	justify-content: space-between;
+    @include transition(all 0.4s cubic-bezier(0.7,0,.3,1));
+
+    @include media($mobile) {
+      color: #333;
+      padding: 10px 15px;
+    }
+
+	div {
+		cursor: pointer;
+	}
+
+	.minimize {
+		line-height: 27px;
+	}
+}
+
+.app-title {
+	flex: 1;
+	padding: 5px 15px;
+	font-weight: 600;
+	font-size: 14px;
+    @include transition(all 0.4s cubic-bezier(0.7,0,.3,1));
+
+    @include media($mobile) {
+     opacity: 0;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "ember-kt-editor",
+  "dependencies": {
+    "ember": "1.13.11",
+    "ember-cli-shims": "0.0.6",
+    "ember-cli-test-loader": "0.2.1",
+    "ember-data": "1.13.15",
+    "ember-load-initializers": "0.1.7",
+    "ember-qunit": "0.4.16",
+    "ember-qunit-notifications": "0.1.0",
+    "ember-resolver": "~0.1.20",
+    "jquery": "^2.1",
+    "loader.js": "ember-cli/loader.js#3.4.0",
+    "qunit": "~1.20.0",
+    "froala-wysiwyg-editor": "~2.2.4",
+    "font-awesome": "~4.5.0",
+    "tooltipster": "^3.3.0",
+    "neat": "1.7.2",
+    "bourbon": "4.2.6",
+    "semantic-ui": "^2.1.8",
+    "ember-simple-auth": "~0.7.3",
+    "ember-cli-moment-shim": "0.0.3"
+  }
+}

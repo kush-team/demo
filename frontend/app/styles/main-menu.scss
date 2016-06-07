@@ -1,0 +1,22 @@
+.main-menu {
+    margin-left: 240px;
+    position: fixed;
+    width: calc(100% - 240px);
+    z-index: 3000;
+    top: -60px;
+
+    @include media($mobile) {
+      margin-left: 0;
+      width: 100%;
+      top: 0px;
+      -webkit-app-region: drag;
+    }
+
+    .item.offcanvas {
+      padding: 0;
+      button {
+        @include transform(scale(0.6));
+      }
+    }
+
+}

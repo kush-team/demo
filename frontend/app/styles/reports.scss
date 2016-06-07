@@ -1,0 +1,46 @@
+.reports {
+  
+  .content {
+    position: relative;
+    padding: 0 !important;
+  }
+
+  .header {
+    padding-right: 120px;
+
+     @include media($tablet) {
+        padding-right: 0;
+      }
+  }
+
+  .image {
+    display: none !important;
+  }
+
+  .item {
+    &:hover {
+      .extra {
+        opacity: 1; 
+      }
+    }
+  }
+
+  .extra {
+      -webkit-transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1) !important;
+      -moz-transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1) !important;
+      transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1) !important;
+      position: absolute !important;
+      right: 0 !important;
+      width: auto !important;
+      left: inherit !important;
+      top: -9px !important;
+      opacity: 0;
+
+
+       @include media($tablet) {
+        position: relative !important;
+        top: 0 !important;
+        opacity: 1 !important;
+      }
+  }
+}
