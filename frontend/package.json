@@ -47,7 +47,7 @@
     "ember-data": "1.13.15",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
-    "ember-froala-editor": "2.2.4",
+    "ember-froala-editor": "2.3.1",
     "ember-multiselect-checkboxes": "0.0.5",
     "ember-perfectscroll": "0.0.8",
     "nw": "0.14.4",

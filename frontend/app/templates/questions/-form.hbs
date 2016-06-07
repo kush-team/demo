@@ -12,6 +12,6 @@
 
     <div class="field">
       <label for="">Pregunta</label>
-      {{froala-editor contentBindingEvent=model.text}}
+      {{froala-editor content=model.text on-contentChanged=(action "changedContent")}}
     </div> 
 </form>

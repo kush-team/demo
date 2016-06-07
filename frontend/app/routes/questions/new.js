@@ -3,6 +3,7 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 import SaveModelMixin from '../../mixins/roles/save-model-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, SaveModelMixin, {
+
   model: function(params) {
   	var _this = this;
 	return Ember.RSVP.hash({
