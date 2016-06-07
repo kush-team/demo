@@ -54,6 +54,11 @@ module.exports.policies = {
     create: ['hasJsonWebToken'],
   },
 
+  QuestionController:{
+    '*': ['hasJsonWebToken'],
+    create: ['hasJsonWebToken', 'authorPolicy'],
+  },
+
   Rolecontroller:{
     '*': ['hasJsonWebToken'],
     create: ['hasJsonWebToken'],
