@@ -124,3 +124,20 @@
       }
     }
 }
+
+.sidebar::after {
+    content: "";
+    background-image: url(http://www.argentina.gob.ar/sites/default/files/argentina.png);
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-position: bottom;
+    background-size: 251px;
+    background-repeat: no-repeat;
+    background-color: #fff;  
+}
+

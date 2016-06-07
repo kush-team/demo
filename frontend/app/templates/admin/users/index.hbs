@@ -1,36 +1,36 @@
+<h2 class="ui header dividing -flex">
+    Listado de Usuarios
+    <div class="actions">{{link-to "Crear nuevo usuario" "admin.users.new" classNames="ui orange button tiny" }}</div>
+</h2>
 
-  <div class="section-header -table">
-    <h1>Usuarios</h1>
-    {{link-to "Crear usuario" "admin.users.new" classNames="btn"}}
+{{#if model.length}}
+ <div class="section-content ">
+    <table class="ui celled striped table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+      <tbody>
+        {{#each user in model}}
+        <tr>
+          <td class="collapsing">
+             {{user.name}} {{user.lastName}} 
+          </td>
+          <td>{{user.email}} {{user.role}} {{user.wall}} {{user.groups.name}} {{user.friends.lastName}}</td>
+          <td class="right aligned collapsing">
+            {{link-to "Editar" "admin.users.edit" role class="ui button tiny"}}
+            <a href="#" {{action "remove" role}} class="ui button tiny">Eliminar</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </div>
-
-  {{#if model.length}}
-    <div class="section-content">
-        {{#if model.length}}
-          <div class="slat-list">
-             {{#each user in model}}
-              <div class="slat-item">
-                <div class="slat-content">
-                  <h4>
-                  {{user.name}} {{user.lastName}} 
-                  <small>{{user.email}} {{user.role}} {{user.wall}} {{user.groups.name}} {{user.friends.lastName}}</small>
-                  </h4>
-                   
-                </div>
-                <div class="slat-action">
-                 {{link-to "Editar" "admin.users.edit" user.id class="btn"}}
-                  <a href="#" class="btn" {{action "remove" user}}>Eliminar</a>
-                </div>
-              </div>
-            {{/each}}
-            {{infinity-loader infinityModel=model}}
-          </div>
-        {{else}}
-          <div class="loading">
-          
-          </div>
-        {{/if}}
-      </div>
-    {{/if}}
-
-
+{{else}}
+  <div class="loading">
+  
+  </div>
+{{/if}}

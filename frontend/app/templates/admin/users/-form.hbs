@@ -1,65 +1,67 @@
-<form {{action "save" on="submit"}} class="create-event">
-  <fieldset>
+<div class="section-content home ui segment tall stacked">
+<form {{action "save" on="submit"}} class="ui form">
+  <div class="field">
     <label>
       Nombre
       {{input type="text" value=model.user.name}}
     </label>
-  </fieldset>
+  </div>
   
-  <fieldset>
+  <div class="field">
     <label>
       Apellido
       {{input type="text" value=model.user.lastName}}
     </label>
-  </fieldset>
+  </div>
 
-  <fieldset>
+  <div class="field">
     <label>
       Email
       {{input type="text" value=model.user.email}}
     </label>
-  </fieldset>
+  </div>
 
-  <fieldset>
+  <div class="field">
     <label>
       Contraseña
       {{input type="text" value=model.user.password}}
     </label>
-  </fieldset>
+  </div>
 
-  <fieldset>
+  <div class="field">
     <label>
       Roles
       {{multiselect-checkboxes options=model.roleList labelProperty='label' selection=model.user.roles}}      
     </label>
-  </fieldset>
+  </div>
 
-   <fieldset>
+   <div class="field">
     <label>
       Ministerios
       {{multiselect-checkboxes options=model.ministryList labelProperty='name' selection=model.user.ministries}}      
     </label>
-  </fieldset>
+  </div>
 
 
-   <fieldset>
+   <div class="field">
     <label>
       Bloque
       {{model-selector modelName='brick' value=model.user.brick optionLabelPath="content.name" }}
     </label>
-  </fieldset>
+  </div>
   
 
-   <fieldset>
+   <div class="field">
     <label>
       Camara
       {{model-selector modelName='camera' value=model.user.camera optionLabelPath="content.name" }}
     </label>
-  </fieldset>
+  </div>
 
    
-  <fieldset>
-    <input type="submit" value="Guardar">
-  </fieldset>
+  <div class="field">
+    <input type="submit" value="Guardar" class="ui button blue">
+  </div>
 </form>
 
+</div>
