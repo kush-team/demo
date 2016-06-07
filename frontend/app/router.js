@@ -47,8 +47,14 @@ Router.map(function() {
 	      this.route("edit", {
 	        path: ":status_type_id/edit"
 	      });
-	    });    
+	    });   
 
+		this.route("cameras", function() {
+	      this.route("new");
+	      this.route("edit", {
+	        path: ":camera_id/edit"
+	      });
+	    });
   	});	
 });
 
