@@ -10,14 +10,14 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         
         return Ember.RSVP.hash({
             report: this.store.find('report', params.report_id),
-            questions: this.store.find('question', {report: params.report_id})
+            questions: this.store.find('question', {report: params.report_id, sort: 'createdAt DESC'})
         }) 
      } else {
         if (this.get('session.user').get('isLegislador')) {
 
             return Ember.RSVP.hash({
                 report: this.store.find('report', params.report_id),
-                questions: this.store.find('question', {report: params.report_id, author: this.get('session.user').get('id')})
+                questions: this.store.find('question', {report: params.report_id, author: this.get('session.user').get('id'),sort: 'createdAt DESC'})
             })           
         } else {
           if (this.get('session.user').get('isMinisterio')) {
@@ -27,7 +27,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
                });
                return Ember.RSVP.hash({
                   report: this.store.find('report', params.report_id),
-                  questions: this.store.find('question', {report: params.report_id, ministry: ministries})
+                  questions: this.store.find('question', {report: params.report_id, ministry: ministries, sort: 'createdAt DESC'})
               })                  
           }
         }
