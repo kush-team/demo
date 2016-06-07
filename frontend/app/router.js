@@ -40,6 +40,11 @@ Router.map(function() {
 	      this.route('show', {
 	        path: ":question_id/answers/:answer_id/show"
 	      });
+
+	      this.route('assign', {
+	        path: ":question_id/answers/:answer_id/assign"
+	      });
+
 	      this.route('new', {
 	      	path: ':question_id/answers/new'
 	      }); 
