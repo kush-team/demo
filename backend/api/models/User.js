@@ -28,6 +28,14 @@ module.exports = {
       collection: 'role'
     },
 
+    ministries: {
+      collection: 'ministry'
+    },
+
+    brick: {
+      model: 'brick'
+    },    
+
     password: {
       type: 'string',
       protected: true

@@ -1,0 +1,63 @@
+
+[32minfo: [39mStarting app...
+
+[33mwarn: [39mCannot read package.json in the current directory (/home/astralwalker/Documentos/repositorio/Informe-JGM)
+[33mwarn: [39mAre you sure this is a Sails app?
+[33mwarn: [39m
+[33mwarn: [39mThe package.json in the current directory does not list Sails as a dependency...
+[33mwarn: [39mAre you sure `/home/astralwalker/Documentos/repositorio/Informe-JGM` is a Sails app?
+[33mwarn: [39m
+[32minfo: [39mCould not find module: ejs in path: /home/astralwalker/Documentos/repositorio/Informe-JGM/node_modules
+[31merror: [39m
+------------------------------------------------------------------------
+grunt-cli: The grunt command line interface. (v0.1.13)
+
+Fatal error: Unable to find local grunt.
+
+If you're seeing this message, either a Gruntfile wasn't found or grunt
+hasn't been installed locally to your project. For more information about
+installing and configuring grunt, please see the Getting Started guide:
+
+http://gruntjs.com/getting-started
+
+------------------------------------------------------------------------
+[37m[39m
+[31merror: [39mLooks like a Grunt error occurred--
+[31merror: [39mPlease fix it, then **restart Sails** to continue running tasks (e.g. watching for changes in assets)
+[31merror: [39mOr if you're stuck, check out the troubleshooting tips below.
+[37m[39m
+[31merror: [39mTroubleshooting tips:
+[31merror: [39m
+[31merror: [39m *-> Are "grunt" and related grunt task modules installed locally?  Run `npm install` if you're not sure.
+[31merror: [39m
+[31merror: [39m *-> You might have a malformed LESS, SASS, CoffeeScript file, etc.
+[31merror: [39m
+[31merror: [39m *-> Or maybe you don't have permissions to access the `.tmp` directory?
+[31merror: [39m     e.g., `/home/astralwalker/Documentos/repositorio/Informe-JGM/.tmp` ?
+[31merror: [39m
+[31merror: [39m     If you think this might be the case, try running:
+[31merror: [39m     sudo chown -R YOUR_COMPUTER_USER_NAME /home/astralwalker/Documentos/repositorio/Informe-JGM/.tmp
+[37m[39m
+[32minfo: [39m
+[32minfo: [39m               .-..-.
+[32minfo: [39m
+[32minfo: [39m   Sails              <|    .-..-.
+[32minfo: [39m   v0.12.3             |\
+[32minfo: [39m                      /|.\
+[32minfo: [39m                     / || \
+[32minfo: [39m                   ,'  |'  \
+[32minfo: [39m                .-'.-==|/_--'
+[32minfo: [39m                `--'-------' 
+[32minfo: [39m   __---___--___---___--___---___--___
+[32minfo: [39m ____---___--___---___--___---___--___-__
+[32minfo: [39m
+[32minfo: [39mServer lifted in `/home/astralwalker/Documentos/repositorio/Informe-JGM`
+[32minfo: [39mTo see your app, visit http://localhost:1337
+[32minfo: [39mTo shut down Sails, press <CTRL> + C at any time.
+[37m[39m
+[34mdebug: [39m-------------------------------------------------------
+[34mdebug: [39m:: Mon Jun 06 2016 23:00:02 GMT-0300 (ART)
+[37m[39m
+[34mdebug: [39mEnvironment : development
+[34mdebug: [39mPort        : 1337
+[34mdebug: [39m-------------------------------------------------------

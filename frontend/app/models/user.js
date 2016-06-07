@@ -7,7 +7,9 @@ export default DS.Model.extend({
   	createdAt: DS.attr('string'),
   	updatedAt: DS.attr('string'),
   	email: DS.attr('string'),
-  	roles: DS.hasMany('role', {async: true}),
+    brick: DS.belongsTo('brick', {async: true}),
+    roles: DS.hasMany('role', {async: true}),
+  	ministries: DS.hasMany('ministry', {async: true}),
 
   	fullName: function () {
   		return this.get('name') + " " + this.get('lastName');
@@ -17,7 +19,11 @@ export default DS.Model.extend({
       return this.get('roles').findBy('name', 'admin') !== undefined;
     }.property('roles.@each.name'),  	
 
-    canViewDataEntry: function () {
-      return this.get('roles').findBy('name', 'data-entry') !== undefined;
-    }.property('roles.@each.name'),   
+    isDiputado: function () {
+      return this.get('roles').findBy('name', 'diputado') !== undefined;
+    }.property('roles.@each.name'),
+
+    isMinistry: function () {
+      return this.get('roles').findBy('name', 'ministerio') !== undefined;
+    }.property('roles.@each.name'),
 });

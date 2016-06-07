@@ -20,10 +20,8 @@ module.exports = function(environment) {
   };
 
   ENV['adapter'] = {
-    'host': 'http://oblat.am',
-    'namespace': 'api',
-    'fileUrl': 'http://oblat.am/',
-    'upload': 'http://oblat.am/upload-file',      
+    'host': 'http://localhost:1138',
+    'namespace': 'api'     
   };
 
 
@@ -40,14 +38,14 @@ module.exports = function(environment) {
 
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:token',
-    crossOriginWhitelist: ['http://oblat.am'],
+    crossOriginWhitelist: ['http://localhost:1138'],
 
     session: 'session:custom',
   };
 
   // Sailsjs JSON Web Token (JWT) Configuration
   ENV['simple-auth-token'] = {
-    serverTokenEndpoint: 'http://oblat.am/auth/login',
+    serverTokenEndpoint: 'http://localhost:1138/auth/login',
     authorizationPrefix: null,
     tokenPropertyName: 'access_token',
     authorizationHeaderName: 'access_token',

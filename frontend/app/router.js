@@ -7,6 +7,49 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
 	this.route("login");
+
+	this.resource('admin', function () {
+	    this.route("users", function() {
+	      this.route("new");
+
+	      this.route("edit", {
+	        path: ":user_id/edit"
+	      });
+
+	      this.route("show", {
+	        path: ":user_id"
+	      });
+	    });
+
+	    this.route("roles", function() {
+	      this.route("new");
+	      this.route("edit", {
+	        path: ":role_id/edit"
+	      });
+	    });
+	         
+	    this.route("bricks", function() {
+	      this.route("new");
+	      this.route("edit", {
+	        path: ":brick_id/edit"
+	      });
+	    });
+
+	    this.route("ministries", function() {
+	      this.route("new");
+	      this.route("edit", {
+	        path: ":ministry_id/edit"
+	      });
+	    });
+
+		this.route("status-types", function() {
+	      this.route("new");
+	      this.route("edit", {
+	        path: ":status_type_id/edit"
+	      });
+	    });    
+
+  	});	
 });
 
 export default Router;
