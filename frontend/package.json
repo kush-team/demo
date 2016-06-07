@@ -20,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
+    "ember-can": "0.8.1",
     "ember-cli": "1.13.13",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.5",
@@ -46,10 +47,10 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-froala-editor": "2.2.4",
-    "nw": "0.14.4",
+    "ember-multiselect-checkboxes": "0.0.5",
     "ember-perfectscroll": "0.0.8",
-    "semantic-ui-ember": "0.9.3",
-    "ember-multiselect-checkboxes": "0.0.5"
+    "nw": "0.14.4",
+    "semantic-ui-ember": "0.9.3"
   },
   "main": "dist/index.html",
   "window": {
