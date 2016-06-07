@@ -1,14 +1,14 @@
 import Ember from 'ember';
-import SaveModelMixin from '../../../mixins/roles/save-model-mixin';
+import SaveModelMixin from '../../../mixins/users/save-model-mixin';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(SaveModelMixin, AuthenticatedRouteMixin, {
   model: function() {
-    return this.store.createRecord('user');
-  },
-  setupController: function (controller, model) {
-  	this._super(controller, model);
-  	controller.set('roleList', this.store.find('role'));
-  	controller.set('ministryList', this.store.find('ministry'));
+	return Ember.RSVP.hash({
+      user: this.store.createRecord('user'),
+      roleList: this.store.find('role'),
+      ministryList: this.store.find('ministry'),
+      cameraList: this.store.find('camera')
+ 	})  	
   },
 });

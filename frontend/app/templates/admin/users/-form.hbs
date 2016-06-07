@@ -2,42 +2,42 @@
   <fieldset>
     <label>
       Nombre
-      {{input type="text" value=model.name}}
+      {{input type="text" value=model.user.name}}
     </label>
   </fieldset>
   
   <fieldset>
     <label>
       Apellido
-      {{input type="text" value=model.lastName}}
+      {{input type="text" value=model.user.lastName}}
     </label>
   </fieldset>
 
   <fieldset>
     <label>
       Email
-      {{input type="text" value=model.email}}
+      {{input type="text" value=model.user.email}}
     </label>
   </fieldset>
 
   <fieldset>
     <label>
       Contraseña
-      {{input type="text" value=model.password}}
+      {{input type="text" value=model.user.password}}
     </label>
   </fieldset>
 
   <fieldset>
     <label>
       Roles
-      {{multiselect-checkboxes options=controller.roleList labelProperty='label' selection=model.roles}}      
+      {{multiselect-checkboxes options=model.roleList labelProperty='label' selection=model.user.roles}}      
     </label>
   </fieldset>
 
    <fieldset>
     <label>
       Ministerios
-      {{multiselect-checkboxes options=controller.ministryList labelProperty='name' selection=model.ministries}}      
+      {{multiselect-checkboxes options=model.ministryList labelProperty='name' selection=model.user.ministries}}      
     </label>
   </fieldset>
 
@@ -45,10 +45,18 @@
    <fieldset>
     <label>
       Bloque
-      {{model-selector modelName='brick' value=model.brick optionLabelPath="content.name" }}
+      {{model-selector modelName='brick' value=model.user.brick optionLabelPath="content.name" }}
     </label>
   </fieldset>
   
+
+   <fieldset>
+    <label>
+      Camara
+      {{model-selector modelName='camera' value=model.user.camera optionLabelPath="content.name" }}
+    </label>
+  </fieldset>
+
    
   <fieldset>
     <input type="submit" value="Guardar">

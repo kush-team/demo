@@ -36,6 +36,10 @@ module.exports = {
       model: 'brick'
     },    
 
+    camera: {
+      model: 'camera'
+    },    
+
     password: {
       type: 'string',
       protected: true

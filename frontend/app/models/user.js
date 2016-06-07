@@ -8,6 +8,7 @@ export default DS.Model.extend({
   	updatedAt: DS.attr('string'),
   	email: DS.attr('string'),
     brick: DS.belongsTo('brick', {async: true}),
+    camera: DS.belongsTo('camera', {async: true}),
     roles: DS.hasMany('role', {async: true}),
   	ministries: DS.hasMany('ministry', {async: true}),
 
