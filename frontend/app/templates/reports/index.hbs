@@ -18,6 +18,7 @@
           <div class="meta">
             
              <span> {{fa-icon 'clock-o' class="icon"}} <i>{{time-ago-in-words report.startDate}}</i></span>
+             {{date-and-time report.startDate}}
           </div>
           <div class="actions">
              {{#if report.published}}

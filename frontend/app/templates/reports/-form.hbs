@@ -1,16 +1,46 @@
-<form class="ui large form" {{action "save" on="submit"}}>
+<form class="ui form large" {{action "save" on="submit"}}>
     <div class="field -action">
         {{ui-checkbox name="isEnabled" checked=model.published class="toggle" label="Publicar"}}
     </div> 
 
     <input type="submit" class="ui button blue -action" value="Guardar">
 
-    <div class="field">
-      <label>Titulo</label>
-      {{input type="text" value=model.title}}
-    </div>
-     <div class="field">
-      <label>Camara</label>
-      {{model-selector modelName='camera' value=model.camera optionLabelPath="content.name" }}
+
+    <div class="fields">
+      <div class="three wide field">
+        <label>Número del informe</label>
+        {{input type="text" value=model.title}}
+      </div>
+      <div class="seven wide field">
+        <label>Camara</label>
+        {{model-selector modelName='camera' value=model.camera optionLabelPath="content.name" }}
+      </div>
     </div> 
+
+     <div class="fields ">
+     <div class="three field">
+       <label>Fecha de apertura</label>
+       {{input type="date" value=model.startDate}}
+     </div>
+
+     <div class="three field">
+       <label>Fecha de cierre de preguntas</label>
+       {{input type="date" value=model.closeQuestionDate}}
+     </div>
+
+     <div class="three field">
+       <label>Fecha de cierre de respuestas</label>
+       {{input type="date" value=model.closeAswerDate}}
+     </div>
+    </div>
+
+
+
+
+
 </form>
+
+
+
+ 
+        
