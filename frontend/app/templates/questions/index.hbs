@@ -1,0 +1,17 @@
+<section>
+
+  <h2 class="ui dividing header">
+    Todos los informes
+    {{link-to "Crear informe" "questions.new" model.report.id classNames="positive ui fluid button"}}
+  </h2>
+
+
+  {{#each question in model.questions}}
+      {{#link-to "questions.show" model.report.id question.id classNames="positive ui fluid button"}}
+        {{question.title}}
+      {{/link-to}}
+  {{/each}}
+
+</section>
+
+{{outlet}}

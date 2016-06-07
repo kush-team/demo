@@ -13,8 +13,21 @@ Router.map(function() {
 		  path: ":report_id/edit",
 		});
 		this.route('show', {
-		  path: ":report_id/show",
-		});
+		  path: ":report_id/show",   		  
+		})
+		this.resource('questions', {
+				path: '/'
+		}, function() {
+		  this.route("index", {
+		  	path: ':report_id/questions'
+		  });
+	      this.route('show', {
+	        path: ":report_id/questions/:question_id/show"
+	      });
+	      this.route('new', {
+	      	path: ':report_id/questions/new'
+	      });  
+		});   
 	}); 
 	this.resource('admin', function () {
 	    this.route("users", function() {

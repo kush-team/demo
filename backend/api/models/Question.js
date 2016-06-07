@@ -23,7 +23,7 @@ module.exports = {
 
   	date: 'string',
 
-  	autor: {
+  	author: {
   		model: 'user'
   	},
 
