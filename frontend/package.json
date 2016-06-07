@@ -47,6 +47,7 @@
     "ember-export-application-global": "^1.0.4",
     "ember-froala-editor": "2.2.4",
     "nw": "0.14.4",
+    "ember-perfectscroll": "0.0.8",
     "semantic-ui-ember": "0.9.3",
     "ember-multiselect-checkboxes": "0.0.5"
   },

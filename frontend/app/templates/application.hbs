@@ -1,22 +1,89 @@
+{{#if session.isAuthenticated}}
+	
 	<div {{bind-attr class=":sidebar isShowMenu:show"}}>
 
 
 		<div class="user">
-			{{#link-to 'index'}}
-				MGJ
+			{{#link-to 'index' class="logo"}}
+				{{fa-icon 'weixin'}}MGJ
 			{{/link-to}}
 			<h3 class="ui sub header">{{session.user.name}} {{session.user.lastName}}</h3>
 			<i>{{session.user.email}}</i>
 		</div>
 
+{{#perfect-scroll wheelSpeed=2}}
+    
+
 		<div class="ui inverted vertical menu">
 			
-			{{#link-to 'index' class="item"}}
-				{{fa-icon 'list' class="icon"}}
-				Todos los informes
-			{{/link-to}}
+		  <div class="item" style="padding: 0;">
+		    <div class="ui transparent input menu-search">
+		    	<input type="text" placeholder="Buscar...">
+		    	
+		    </div>
+		  </div>
+
+
+{{#ui-accordion class="item inverted"}}
+	<div class="title">
+		{{fa-icon 'file-o' class="icon"}}Informe Numero 92
+	</div>
+	<div class="content">
+		<div class="item">
+			BLOQUE AVANZAR SAN LUIS
+			<div class="menu">
+				<a class="active item">Jon Snow</a>
+				<a class="item">Arya Stark</a>
+				<a class="item">Valar Moguls</a>
+			</div>
+		</div>
+	</div>
+{{/ui-accordion}}
+{{#ui-accordion class="item inverted"}}
+	<div class="title">
+		{{fa-icon 'file-o' class="icon"}}Informe Numero 91
+	</div>
+	<div class="content">
+		<div class="item">
+			BLOQUE AVANZAR SAN LUIS
+			<div class="menu">
+				<a class="active item">Jon Snow</a>
+				<a class="item">Arya Stark</a>
+				<a class="item">Valar Moguls</a>
+			</div>
+		</div>
+	</div>
+{{/ui-accordion}}
+{{#ui-accordion class="item inverted"}}
+	<div class="title">
+		{{fa-icon 'file-o' class="icon"}}Informe Numero 90
+	</div>
+	<div class="content">
+		<div class="item">
+			BLOQUE AVANZAR SAN LUIS
+			<div class="menu">
+				<a class="active item">Jon Snow</a>
+				<a class="item">Arya Stark</a>
+				<a class="item">Valar Moguls</a>
+			</div>
+		</div>
+	</div>
+{{/ui-accordion}}
+
+		 {{#link-to 'admin.index' class="item"}}
+	{{fa-icon "cog" class="icon"}}
+	Ajustes
+{{/link-to}}
+
+
+		<a {{ action 'invalidateSession' }} class="item">
+ 	{{fa-icon "sign-out" class="icon"}}
+ 				Cerrar sesión
+ 			</a>
+
 		</div>
 		
+{{/perfect-scroll}}
 	</div>
 
 	<div class="main-menu">
@@ -32,5 +99,19 @@
 
 		{{outlet}}
 
+
+
 	</div>
+
+{{else}}
+
+	<div class="login">
+
+		{{outlet}}
+
+
+
+	</div>
+
+{{/if}}
 

@@ -19,6 +19,7 @@
     "bourbon": "4.2.6",
     "semantic-ui": "^2.1.8",
     "ember-simple-auth": "~0.7.3",
+    "perfect-scrollbar": "~0.6.7",
     "ember-cli-moment-shim": "0.0.3"
   }
 }
