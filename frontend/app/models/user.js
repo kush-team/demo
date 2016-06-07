@@ -17,14 +17,14 @@ export default DS.Model.extend({
   	}.property('name', 'lastName'),
 
     isAdmin: function () {
-      return this.get('roles').findBy('name', 'admin') !== undefined;
+      return this.get('roles').findBy('name', 'Admin') !== undefined;
     }.property('roles.@each.name'),  	
 
-    isDiputado: function () {
-      return this.get('roles').findBy('name', 'diputado') !== undefined;
+    isLegislador: function () {
+      return this.get('roles').findBy('name', 'Legislador') !== undefined;
     }.property('roles.@each.name'),
 
-    isMinistry: function () {
-      return this.get('roles').findBy('name', 'ministerio') !== undefined;
+    isMinisterio: function () {
+      return this.get('roles').findBy('name', 'Ministerio') !== undefined;
     }.property('roles.@each.name'),
 });
