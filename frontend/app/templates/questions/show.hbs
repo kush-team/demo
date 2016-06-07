@@ -1,7 +1,14 @@
 <div class="section-content home ui segment tall stacked">
  	<div class="actions" style="padding: 1em; text-align: center;">
 	  	<button class="ui button orange tiny"><i class="alarm icon"></i> Asignar a Ministerio</button>
-  		<button class="ui button blue tiny"><i class="reply icon"></i> Responder</button>
+
+  		{{#link-to 'answers.new' model.report.id model.id class="ui button blue tiny"}}
+  			<i class="reply icon"></i> Responder
+  		{{/link-to}}
+
+ 		{{#link-to 'answers.index' model.report.id model.id class="ui button blue tiny"}}
+  			<i class="reply icon"></i> Ver respuestas
+  		{{/link-to}}  		
   		<button class="ui button green tiny"><i class="flag icon"></i> Aprobar</button>
   		<button class="ui button yellow tiny"><i class="plus icon"></i> Agregar nueva respuesta</button>
   	</div>
@@ -20,4 +27,3 @@
     <p style="font-size: 17px; padding: 1em;">{{{model.text}}}</p>
 
 </div>
-

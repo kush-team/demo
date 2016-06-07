@@ -1,0 +1,47 @@
+<section>
+  <h2 class="ui dividing header -flex">
+   {{model.question.title}}
+   <div class="sub header">{{model.question.author.fullName}}</div>
+    <div class="actions">{{link-to "Crear Respuesta" "answers.new" model.report.id classNames="positive ui tiny fluid button"}}</div>
+  </h2>
+
+  <div>
+   {{{model.question.text}}}
+  </div>
+  <div class="section-content home ui segment tall stacked">
+  {{#if model.answers}}
+    <div class="ui divided items ">
+    {{#each answer in model.answers}}
+    	<div class="item">
+      <div class="content">
+        <div class="meta">
+        	<a href="">{{answer.author.fullName}}</a>
+        </div>
+        <div class="description">
+          <p>{{{answer.text}}}</p>
+        </div>
+        <div class="actions" style="margin-top: 15px;">
+        	<div class="ui label">{{fa-icon 'bank' class="icon"}}{{answer.author.brick.name}}</div>
+        </div>
+        <div class="extra">
+          {{#link-to "answers.show" model.question.id answer.id classNames="ui blue label"}}
+  	        Ver respuesta completa
+  	      {{/link-to}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    </div>
+  {{else}}
+    <h2 class="ui center aligned icon header" style="width: 100%; padding: 1em; opacity: 0.3;">
+      <i class="circular announcement icon"></i>
+      No hay respuestas cargadas
+    </h2>
+  {{/if}}
+  </div>
+
+</section>
+
+
+
+

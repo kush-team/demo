@@ -5,4 +5,7 @@ export default DS.RESTAdapter.extend({
   namespace: config.adapter.namespace,
   coalesceFindRequests: true,
   host: config.adapter.host,
+  shouldBackgroundReloadRecord: function () {
+  	return false;
+  },
 });

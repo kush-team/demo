@@ -28,7 +28,23 @@ Router.map(function() {
 	      this.route('new', {
 	      	path: ':report_id/questions/new'
 	      });  
+
 		});   
+
+  		this.resource('answers', {
+				path: ':report_id/questions/'
+		}, function() {
+		  this.route("index", {
+		  	path: ':question_id/answers'
+		  });
+	      this.route('show', {
+	        path: ":question_id/answers/:answer_id/show"
+	      });
+	      this.route('new', {
+	      	path: ':question_id/answers/new'
+	      }); 
+	       
+		});		
 	}); 
 	this.resource('admin', function () {
 	    this.route("users", function() {

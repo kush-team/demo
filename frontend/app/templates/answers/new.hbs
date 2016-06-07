@@ -1,0 +1,24 @@
+
+<div class="section-content home ui segment tall stacked">
+	<div class="section-content ui segment tall stacked">
+		{{partial "answers/form"}}
+	</div>
+
+ 	<div class="actions" style="padding: 1em; text-align: center;">
+	
+  	</div>
+
+	<h4 class="ui horizontal divider header" style="padding: 0; font-size: 19px; margin-top: 15px;">
+	  {{fa-icon 'bank'}} <span style="margin-left: 15px;"> {{model.question.author.brick.name}}</span>
+	</h4>
+
+	<h2 class="ui center aligned icon header" style="padding: 0;line-height: 36px;padding: 0 3em;">
+	  <div class="content">
+	    {{model.question.title}}
+	    <div class="sub header"> <i>{{model.question.author.fullName}}</i> </div>
+	  </div>
+	</h2>
+
+    <p style="font-size: 17px; padding: 1em;">{{{model.question.text}}}</p>
+
+</div>
