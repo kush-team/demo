@@ -4,10 +4,6 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
-  model: function() {
-      return this.store.find("question");
-  },
-
   model: function(params) {
     return Ember.RSVP.hash({
         report: this.store.find('report', params.report_id),
