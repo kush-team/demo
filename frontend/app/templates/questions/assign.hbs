@@ -1,0 +1,27 @@
+<section class="create-report">
+	<h2 class="ui dividing header menu-header">
+	   	Asignar a Ministerio
+	</h2>
+
+	<div class="section-content ui segment tall stacked">
+		<form class="ui large form" {{action "save" on="submit"}}>
+		    <input type="submit" class="ui button blue -action" value="Guardar">
+
+		    <div class="field">
+		      <label>Titulo</label>
+		      {{input type="text" value=model.title}}
+		    </div>
+
+
+		   <fieldset>
+			    <label>
+			      Ministerio
+			      {{model-selector modelName='ministry' value=model.ministry optionLabelPath="content.name" }}
+			    </label>
+		  </fieldset>
+
+		</form>
+
+	</div>
+</section>
+
