@@ -1,0 +1,36 @@
+<h2 class="ui header dividing -flex">
+    Listado de Partidos Politicos
+    <div class="actions">{{link-to "Crear Bloque" "admin.bricks.new" classNames="ui orange button tiny" }}</div>
+</h2>
+
+{{#if model.length}}
+ <div class="section-content ">
+  <table class="ui celled striped table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+    <tbody>
+      {{#each party in model}}
+      <tr>
+        <td class="collapsing">
+          {{fa-icon 'bank' class="icon"}} {{party.name}}
+        </td>
+        <td class="right aligned collapsing">
+          {{link-to "Editar" "admin.bricks.edit" party class="ui button tiny"}}
+          <a href="#" {{action "remove" party}} class="ui button tiny">Eliminar</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  </div>
+{{else}}
+  <div class="loading">
+  
+  </div>
+{{/if}}
+
+

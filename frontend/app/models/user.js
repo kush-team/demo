@@ -12,6 +12,11 @@ export default DS.Model.extend({
     roles: DS.hasMany('role', {async: true}),
   	ministries: DS.hasMany('ministry', {async: true}),
 
+    photo: DS.belongsTo('asset', {async: true}),
+    province: DS.belongsTo('asset', {async: true}),
+    party: DS.belongsTo('party', {async: true}),
+
+
   	fullName: function () {
   		return this.get('name') + " " + this.get('lastName');
   	}.property('name', 'lastName'),

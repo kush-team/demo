@@ -54,5 +54,15 @@ module.exports.routes = {
     controller: 'Auth',
     action: 'logout'
   },
+  
+  'post /upload-file': {
+    controller: 'Asset',
+    action: 'upload'
+  },
+
+  'get /assets/*': {
+    controller: 'Asset',
+    action: 'getFile'
+  },
 
 };

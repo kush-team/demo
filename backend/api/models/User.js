@@ -36,6 +36,14 @@ module.exports = {
       model: 'brick'
     },    
 
+    province: {
+      model: 'province'
+    },     
+
+    party: {
+      model: 'party'
+    },
+
     camera: {
       model: 'camera'
     },    
@@ -43,6 +51,10 @@ module.exports = {
     password: {
       type: 'string',
       protected: true
+    },
+
+    photo: {
+      model: 'asset'
     },
 
     attempts: {

@@ -1,9 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  isShowMenu: false,
+  	isShowMenu: false,
 
-  actions: {
+
+
+	actions: {
 
 		openModal: function() {
 	      $('.ui.modal').modal('show');

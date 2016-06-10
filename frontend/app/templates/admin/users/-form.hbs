@@ -34,22 +34,37 @@
       {{multiselect-checkboxes options=model.roleList labelProperty='label' selection=model.user.roles}}      
     </label>
   </div>
-
+  {{#if model.user.isMinisterio}}
    <div class="field">
     <label>
       Ministerios
       {{multiselect-checkboxes options=model.ministryList labelProperty='name' selection=model.user.ministries}}      
     </label>
   </div>
+  {{/if}}
 
 
+  {{#if model.user.isLegislador}}
+   <div class="field">
+    <label>
+      Provincia
+      {{model-selector modelName='province' value=model.user.camera optionLabelPath="content.name" }}
+    </label>
+  </div>
+   
+   <div class="field">
+    <label>
+      Partido Politico
+      {{model-selector modelName='party' value=model.user.camera optionLabelPath="content.name" }}
+    </label>
+  </div>
+   
    <div class="field">
     <label>
       Bloque
       {{model-selector modelName='brick' value=model.user.brick optionLabelPath="content.name" }}
     </label>
   </div>
-  
 
    <div class="field">
     <label>
@@ -57,7 +72,7 @@
       {{model-selector modelName='camera' value=model.user.camera optionLabelPath="content.name" }}
     </label>
   </div>
-
+  {{/if}}
    
   <div class="field">
     <input type="submit" value="Guardar" class="ui button blue">

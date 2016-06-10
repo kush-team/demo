@@ -2,7 +2,9 @@
   <h2 class="ui dividing header -flex">
    Informe N° {{model.report.title}}
    <div class="sub header">Camara de {{model.report.camera.name}}</div>
-    <div class="actions">{{link-to "Crear pregunta" "questions.new" model.report.id classNames="positive ui tiny fluid button"}}</div>
+      {{#if session.user.isLegislador}}
+          <div class="actions">{{link-to "Crear pregunta" "questions.new" model.report.id classNames="positive ui tiny fluid button"}}</div>
+      {{/if}}   
   </h2>
 
   <div class="section-content home ui segment tall stacked">
@@ -22,8 +24,6 @@
         <div class="actions" style="margin-top: 15px;">
         	<div class="ui label">{{fa-icon 'bank' class="icon"}} Ministerio de {{question.ministry.name}}</div>
           <div class="ui label">Bloque {{question.author.brick.name}}</div>
-
-          
         </div>
         <div class="extra">
           {{#if session.user.isLegislador}}

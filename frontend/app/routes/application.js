@@ -8,18 +8,34 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 		controller.set('isMaximize', false);
 	},
 
+	userChanged: function () {
+		var _this = this;
+		if (this.get('session.isAuthenticated')) {
+	  		this.get('session.user').then(function (user) {
+		  		user.get('roles').then(function (roles) {
+		  			if (user.get('isLegislador')) {
+						_this.controller.set('model', _this.store.find("report", {camera: _this.get('session.user').get('camera').get('id')}));
+		  			} else {
+		  				_this.controller.set('model',_this.store.find("report"));
+		  			}
+		  		});
+	  		})
+		}		
+	}.observes('session.isAuthenticated'),
+
 	model: function() {
 		var _this = this;
-		if (this.get('session.isAuthenticated'))
-	  	return this.get('session.user').then(function (user) {
-	  		return user.get('roles').then(function (roles) {
-	  			if (user.get('isLegislador')) {
-					return _this.store.find("report", {camera: _this.get('session.user').get('camera').get('id')});
-	  			} else {
-	  				return _this.store.find("report");
-	  			}
-	  		});
-	  	})
+		if (this.get('session.isAuthenticated')) {
+	  		return this.get('session.user').then(function (user) {
+		  		return user.get('roles').then(function (roles) {
+		  			if (user.get('isLegislador')) {
+						return _this.store.find("report", {camera: _this.get('session.user').get('camera').get('id')});
+		  			} else {
+		  				return _this.store.find("report");
+		  			}
+		  		});
+	  		})
+		}
 	},
 
 	actions: {

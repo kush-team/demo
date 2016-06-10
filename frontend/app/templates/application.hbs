@@ -15,10 +15,12 @@
 
 		{{#perfect-scroll wheelSpeed=2}}
 		<div class="ui inverted vertical menu">
-			{{#link-to 'reports.index' class="item"}}
-				{{fa-icon "file" class="icon"}}
-				Listado de Informes
-			{{/link-to}}
+			{{#if session.user.isAdmin}}
+				{{#link-to 'reports.index' class="item"}}
+					{{fa-icon "file" class="icon"}}
+					Listado de Informes
+				{{/link-to}}
+			{{/if}}
 			{{#each report in model}}
 				{{#link-to 'questions' report.id class="item"}}
 					{{fa-icon 'file-o' class="icon"}}Informe N°{{report.title}}

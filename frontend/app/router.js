@@ -77,19 +77,25 @@ Router.map(function() {
         });
       });
 
+      this.route("provinces", function() {
+        this.route("new");
+        this.route("edit", {
+          path: ":province_id/edit"
+        });
+      });      
+
+      this.route("parties", function() {
+        this.route("new");
+        this.route("edit", {
+          path: ":party_id/edit"
+        });
+      });   
       this.route("ministries", function() {
         this.route("new");
         this.route("edit", {
           path: ":ministry_id/edit"
         });
       });
-
-      this.route("status-types", function() {
-        this.route("new");
-        this.route("edit", {
-          path: ":status_type_id/edit"
-        });
-      });   
 
       this.route("cameras", function() {
         this.route("new");

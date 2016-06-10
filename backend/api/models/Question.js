@@ -27,6 +27,10 @@ module.exports = {
   		model: 'user'
   	},
 
+    coAuthors: {
+      collection: 'user'
+    },
+
   	published: 'boolean',
 
   	title: 'string',
