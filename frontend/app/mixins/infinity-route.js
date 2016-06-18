@@ -8,7 +8,7 @@ export default Ember.Mixin.create({
     @type Integer
     @default 25
   */
-  _perPage: 25,
+  _perPage: 20,
 
   /**
     @private
@@ -135,10 +135,10 @@ export default Ember.Mixin.create({
             list.pushObjects(infinityModel.get('content'));
             _this.set('_loadingMore', false);
             _this.set('_currentPage', nextPage);
-            Ember.run.scheduleOnce('afterRender', _this, 'infinityModelUpdated', { lastPageLoaded: nextPage, totalPages: totalPages, newObjects: infinityModel });
+            //Ember.run.scheduleOnce('afterRender', _this, 'infinityModelUpdated', { lastPageLoaded: nextPage, totalPages: totalPages, newObjects: infinityModel });
             if (!_this.get('_canLoadMore')) {
               _this.set('controller.model.reachedInfinity', true);
-              Ember.run.scheduleOnce('afterRender', _this, 'infinityModelLoaded', { totalPages: totalPages });
+              //Ember.run.scheduleOnce('afterRender', _this, 'infinityModelLoaded', { totalPages: totalPages });
             }
           },
           function() {

@@ -5,9 +5,9 @@ export default Ember.Component.extend({
 	optionLabelPath: 'content.name',
 	countryFilter: null,
 
-	data: Ember.computed('modelName', 'countryFilter', function () {
-		if (this.get('countryFilter')) {
-			return this.get('store').find(this.get('modelName'), {country: this.get('countryFilter')});
+	data: Ember.computed('modelName', 'legislatorFilter', function () {
+		if (this.get('legislatorFilter')) {
+			return this.get('store').find(this.get('modelName'), {camera: this.get('legislatorFilter')});
 		} else {
 			return this.get('store').find(this.get('modelName'));
 		}

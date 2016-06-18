@@ -7,6 +7,31 @@
       {{/if}}   
   </h2>
 
+  {{#if session.user.isAdmin}}
+      <div class="search-form">
+        <label class="item">
+          <span>Ministerio</span>
+          {{model-selector modelName='ministry' value=ministry optionLabelPath="content.name" class="select-item" }}
+        </label>
+        <label class="item">
+          <span>Bloque</span>
+          {{model-selector modelName='brick' value=brick optionLabelPath="content.name" class="select-item"}}
+        </label>
+        <label class="item">
+          <span>Legislador</span>
+          {{model-selector modelName='user' legislatorFilter=model.report.camera.id value=user optionLabelPath="content.fullName" class="select-item"}}
+        </label>        
+
+        <label class="item">
+          <span>Tags</span>
+          {{model-selector modelName='tag' value=tag optionLabelPath="content.name" class="select-item"}}
+        </label>        
+
+        <a {{action 'search'}} class="action">
+          {{fa-icon "search"}}
+        </a>
+    </div>    
+  {{/if}}
   <div class="section-content home ui segment tall stacked">
   {{#if model.questions}}
     <div class="ui divided items ">
@@ -39,6 +64,7 @@
       </div>
     </div>
     {{/each}}
+    {{infinity-loader infinityModel=model}}
     </div>
   {{else}}
     <h2 class="ui center aligned icon header" style="width: 100%; padding: 1em; opacity: 0.3;">
