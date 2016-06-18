@@ -9,5 +9,7 @@ export default DS.Model.extend({
 	published: DS.attr('boolean'),
 	author: DS.belongsTo('user', {async: true}),
   	title: DS.attr('string'),
-  	text: DS.attr('string')
+  	text: DS.attr('string'),
+  	tags: DS.hasMany('tag', {async: true}),
+  	coAuthors: DS.hasMany('user', {async: true}),
 });

@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-kt-editor',
     environment: environment,
-    baseURL: '/backend/',
+    baseURL: '/',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
@@ -20,7 +20,7 @@ module.exports = function(environment) {
   };
 
   ENV['adapter'] = {
-    'host': 'http://104.236.171.103/backend',
+    'host': 'http://104.236.171.103:1138',
     'namespace': 'api'     
   };
 
@@ -38,14 +38,14 @@ module.exports = function(environment) {
 
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:token',
-    crossOriginWhitelist: ['http://104.236.171.103/backend'],
+    crossOriginWhitelist: ['http://104.236.171.103:1138'],
 
     session: 'session:custom',
   };
 
   // Sailsjs JSON Web Token (JWT) Configuration
   ENV['simple-auth-token'] = {
-    serverTokenEndpoint: 'http://104.236.171.103/backend/auth/login',
+    serverTokenEndpoint: 'http://104.236.171.103:1138/auth/login',
     authorizationPrefix: null,
     tokenPropertyName: 'access_token',
     authorizationHeaderName: 'access_token',

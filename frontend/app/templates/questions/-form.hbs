@@ -13,5 +13,23 @@
     <div class="field">
       <label for="">Pregunta</label>
       {{froala-editor content=model.text on-contentChanged=(action "changedContent")}}
-    </div> 
+    </div>
+
+    {{searchable-select
+      content=controller.tags
+      sortBy="name"
+      optionLabelKey="name"
+      multiple=true
+      on-change=(action "updateTags")
+      prompt="Select tags"
+      on-add=(action "addNewTag")}}
+
+    {{searchable-select
+      content=controller.users
+      sortBy="fullName"
+      optionLabelKey="fullName"
+      multiple=true
+      on-change=(action "updateUsers")
+      prompt="CoAutores"}}      
+
 </form>

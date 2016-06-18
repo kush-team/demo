@@ -50,6 +50,7 @@
     "ember-froala-editor": "2.3.1",
     "ember-multiselect-checkboxes": "0.0.5",
     "ember-perfectscroll": "0.0.8",
+    "ember-searchable-select": "0.9.1",
     "nw": "0.14.4",
     "semantic-ui-ember": "0.9.3"
   },
