@@ -11,25 +11,37 @@
     </div>
 
     <div class="field">
-      <label for="">Pregunta</label>
-      {{froala-editor content=model.text on-contentChanged=(action "changedContent")}}
-    </div>
-
+      <label for="">Etiquetas</label>
+      
     {{searchable-select
       content=controller.tags
       sortBy="name"
       optionLabelKey="name"
       multiple=true
       on-change=(action "updateTags")
-      prompt="Select tags"
+      prompt="Agregar etiquetas"
       on-add=(action "addNewTag")}}
+    </div>
 
-    {{searchable-select
-      content=controller.users
-      sortBy="fullName"
-      optionLabelKey="fullName"
-      multiple=true
-      on-change=(action "updateUsers")
-      prompt="CoAutores"}}      
+    <div class="field">
+      <label for="">Co Autores</label>
 
+      {{searchable-select
+        content=controller.users
+        sortBy="fullName"
+        optionLabelKey="fullName"
+        multiple=true
+        on-change=(action "updateUsers")
+        prompt="CoAutores"}}    
+     </div>  
+
+    <div class="field">
+      <label for="">Pregunta</label>
+      {{froala-editor content=model.text on-contentChanged=(action "changedContent")}}
+    </div>
+
+
+
+ 
 </form>
+

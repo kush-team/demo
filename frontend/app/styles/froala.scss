@@ -1,5 +1,11 @@
 .fr-box {
     @include transition(all 1.8s cubic-bezier(0.7,0,.3,1));
+
+    a[href="https://froala.com/wysiwyg-editor"] {
+		opacity: 0;
+		display: none !important;
+
+	}
 }
 
 .fr-box.fr-fullscreen {
@@ -18,9 +24,9 @@
 		  padding: 5em 12em;
 		}
 	}
-
-	
 }
+
+
 
 .fr-sticky-on {
 	top: 70px !important;

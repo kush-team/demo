@@ -45,6 +45,20 @@
         @include media($mobile) {
            height: calc(100vh - 168px)
       }
+
+      .scroll-btn {
+        position: fixed;
+        right: 0;
+        background: red;
+
+        &.to-up {
+          bottom: 0;
+        }
+
+        &.to-bottom {
+          top: 0;
+        }
+      }
     }
 
     &.show {

@@ -1,5 +1,5 @@
 <section>
-  <h2 class="ui dividing header -flex">
+  <h2 class="ui dividing header -flex" style="margin: 0;">
    Informe N° {{model.report.title}}
    <div class="sub header">Camara de {{model.report.camera.name}}</div>
       {{#if session.user.isLegislador}}
@@ -8,29 +8,50 @@
   </h2>
 
   {{#if session.user.isAdmin}}
-      <div class="search-form">
-        <label class="item">
-          <span>Ministerio</span>
+      <div class="search-form ui form" style="background: #f1f1f1; padding: 15px;">
+
+
+        <div class="three fields">
+        <div class="field">
+        <label>
+          Ministerio
+        </label>
           {{model-selector modelName='ministry' value=ministry optionLabelPath="content.name" class="select-item" }}
+        </div>
+        <div class="field">
+        <label>
+          Bloque
         </label>
-        <label class="item">
-          <span>Bloque</span>
           {{model-selector modelName='brick' value=brick optionLabelPath="content.name" class="select-item"}}
-        </label>
-        <label class="item">
-          <span>Legislador</span>
+        </div>
+        <div class="field">
+        <label>
+          Legislador
+        </label>        
           {{model-selector modelName='user' legislatorFilter=model.report.camera.id value=user optionLabelPath="content.fullName" class="select-item"}}
-        </label>        
+        </div>
 
-        <label class="item">
-          <span>Tags</span>
+        <div class="field">
+          
+        <label>
+          Tags
+        </label>        
           {{model-selector modelName='tag' value=tag optionLabelPath="content.name" class="select-item"}}
-        </label>        
+        </div>
 
-        <a {{action 'search'}} class="action">
-          {{fa-icon "search"}}
+        <div class="field">
+        <label for="">&nbsp;</label>
+        <a {{action 'search'}} class="action ui  blue button">
+          {{fa-icon "search"}} Buscar
         </a>
-    </div>    
+        </div>
+
+        </div>
+
+        
+    </div>  
+<div class="ui divider" style="margin-top: 0;"></div>
+
   {{/if}}
   <div class="section-content home ui segment tall stacked">
   {{#if model.questions}}
@@ -47,8 +68,18 @@
           <p>{{{question.text}}}</p>
         </div>
         <div class="actions" style="margin-top: 15px;">
-        	<div class="ui label">{{fa-icon 'bank' class="icon"}} Ministerio de {{question.ministry.name}}</div>
-          <div class="ui label">Bloque {{question.author.brick.name}}</div>
+        	{{#if question.ministry }}
+          <div class="ui label teal">{{fa-icon 'bank' class="icon"}} Ministerio de {{question.ministry.name}}</div>
+          {{else}}
+          <div class="ui label">{{fa-icon 'bank' class="icon"}} Ministerio no asignado</div>
+          {{/if}}
+
+          {{#if question.author.brick }}
+
+          <div class="ui green label" style="margin-top: 8px;margin-left: 0;">Bloque {{question.author.brick.name}}</div>
+          {{else}}
+          <div class="ui label" style="margin-top: 8px;margin-left: 0;">{{fa-icon 'bank' class="icon"}} Bloque no asignado</div>
+          {{/if}}
         </div>
         <div class="extra">
           {{#if session.user.isLegislador}}
