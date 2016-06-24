@@ -19,51 +19,35 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['adapter'] = {
-    'host': 'http://104.236.171.103:1138',
-    'namespace': 'api'     
-  };
-
-
-  ENV['contentSecurityPolicy'] = {
-      'default-src': "* 'unsafe-inline' 'unsafe-eval'",
-      'script-src': "* 'unsafe-inline' 'unsafe-eval'",
-      'font-src': "* 'unsafe-inline' 'unsafe-eval'",
-      'connect-src': "*",
-      'img-src': "* 'unsafe-inline' 'unsafe-eval'",
-      'style-src': "* 'unsafe-inline' 'unsafe-eval'",
-      'media-src': "* 'unsafe-inline' 'unsafe-eval'",
-      'report-uri': 'http://irreversible.cc'
-  };
-
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:token',
-    crossOriginWhitelist: ['http://104.236.171.103:1138'],
-
-    session: 'session:custom',
-  };
-
-  // Sailsjs JSON Web Token (JWT) Configuration
-  ENV['simple-auth-token'] = {
-    serverTokenEndpoint: 'http://104.236.171.103:1138/auth/login',
-    authorizationPrefix: null,
-    tokenPropertyName: 'access_token',
-    authorizationHeaderName: 'access_token',
-    identificationField: 'email',
-  };   
-
-  ENV['ember-can'] = {
-    inject: {
-      session: 'session:custom'
-    }
-  };      
-  
+ 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['adapter'] = {
+      'host': 'http://104.236.171.103:1138',
+      'namespace': 'api'     
+    };
+
+    ENV['simple-auth'] = {
+      authorizer: 'simple-auth-authorizer:token',
+      crossOriginWhitelist: ['http://104.236.171.103:1138'],
+
+      session: 'session:custom',
+    };
+
+    // Sailsjs JSON Web Token (JWT) Configuration
+    ENV['simple-auth-token'] = {
+      serverTokenEndpoint: 'http://104.236.171.103:1138/auth/login',
+      authorizationPrefix: null,
+      tokenPropertyName: 'access_token',
+      authorizationHeaderName: 'access_token',
+      identificationField: 'email',
+    };   
+
+
   }
 
   if (environment === 'test') {
@@ -79,9 +63,46 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV['adapter'] = {
+      'host': 'http://104.236.171.103/backend',
+      'namespace': 'api'     
+    };
+
+    ENV['simple-auth'] = {
+      authorizer: 'simple-auth-authorizer:token',
+      crossOriginWhitelist: ['http://104.236.171.103/backend'],
+
+      session: 'session:custom',
+    };
+
+    // Sailsjs JSON Web Token (JWT) Configuration
+    ENV['simple-auth-token'] = {
+      serverTokenEndpoint: 'http://104.236.171.103/backend/auth/login',
+      authorizationPrefix: null,
+      tokenPropertyName: 'access_token',
+      authorizationHeaderName: 'access_token',
+      identificationField: 'email',
+    };   
+
 
   }
 
+  ENV['contentSecurityPolicy'] = {
+      'default-src': "* 'unsafe-inline' 'unsafe-eval'",
+      'script-src': "* 'unsafe-inline' 'unsafe-eval'",
+      'font-src': "* 'unsafe-inline' 'unsafe-eval'",
+      'connect-src': "*",
+      'img-src': "* 'unsafe-inline' 'unsafe-eval'",
+      'style-src': "* 'unsafe-inline' 'unsafe-eval'",
+      'media-src': "* 'unsafe-inline' 'unsafe-eval'",
+      'report-uri': 'http://irreversible.cc'
+  };
+
+  ENV['ember-can'] = {
+    inject: {
+      session: 'session:custom'
+    }
+  };      
 
   return ENV;
 };

@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { memberAction, collectionAction } from 'ember-api-actions';
 
 export default DS.Model.extend({
 	report: DS.belongsTo('report', {async: true}),
@@ -12,4 +13,5 @@ export default DS.Model.extend({
   	text: DS.attr('string'),
   	tags: DS.hasMany('tag', {async: true}),
   	coAuthors: DS.hasMany('user', {async: true}),
+  	assign: memberAction({ path: 'assign' }),
 });
