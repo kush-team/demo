@@ -6,11 +6,7 @@ var CustomSession = SimpleAuthSession.extend({
       var userId = this.get('user_id');
       var _this = this;
       if (!Ember.isEmpty(userId)) {
-        return this.container.lookup('store:main').find('user', userId).then(function (model) {
-          return model;
-        }, function (err) {
-          _this.invalidate();
-        });
+        return this.container.lookup('store:main').find('user', userId);
       }
     }.property('user_id')
 });

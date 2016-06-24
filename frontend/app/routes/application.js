@@ -39,6 +39,10 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 	},
 
 	actions: {
+		error: function (args, transition) {
+			this.get('session').invalidate();
+		},
+
  		willTransition: function(transition) { 
    		 	this.controller.set('isShowMenu', false);
    		},
